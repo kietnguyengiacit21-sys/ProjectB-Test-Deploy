@@ -538,13 +538,13 @@
 
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
+  <script src="/js/config.js"></script>
   <script>
     // Gọi UI Components
     renderHeader("header");
     renderFooter("footer");
     renderFloatingIcons("floating-icons");
-
+    
     // ========================================================
     // 1. ĐỊNH NGHĨA KHUNG GIAO DIỆN (Luôn hiển thị 17 Nút Bấm)
     // ========================================================
@@ -588,7 +588,7 @@
       // Bổ sung thêm cái này đề phòng database có lưu đường dẫn bắt đầu bằng assets/ (như con chuột Razer)
       if (imgStr.startsWith('assets/')) return `../${imgStr}`;
 
-      return `http://localhost:3000/${imgStr}`;
+      return `${API_BASE_URL}/${imgStr}`;
     }
 
     try {
@@ -613,8 +613,8 @@
 
         // SỬA LINK Ở ĐÂY: Gọi đúng vào 2 cái API mình vừa làm
         const [itemsRes, publicRes] = await Promise.all([
-          fetch("http://localhost:3000/api/products/items", postOptions).catch(() => null),
-          fetch("http://localhost:3000/api/products/public", postOptions).catch(() => null)
+          fetch(`${API_BASE_URL}/api/products/items`, postOptions).catch(() => null),
+          fetch(`${API_BASE_URL}/api/products/public`, postOptions).catch(() => null)
         ]);
 
         // 1. Đổ dữ liệu vào bảng Build PC (Phía trên)

@@ -338,7 +338,7 @@
 
   <script src="../components/header.js"></script>
   <script src="../components/footer.js"></script>
-
+  <script src="/js/config.js"></script>
   <script>
     renderHeader("header");
     renderFooter("footer");
@@ -347,7 +347,7 @@
     function getSafeImageUrl(imgStr) {
       if (!imgStr) return "https://placehold.co/500x500/1f2937/fff?text=No+Image";
       if (imgStr.startsWith('http') || imgStr.startsWith('data:')) return imgStr;
-      return `http://localhost:3000/${imgStr}`;
+      return `${API_BASE_URL}/${imgStr}`;
     }
 
     // 2. Hàm định dạng tiền
@@ -452,7 +452,7 @@
       }
 
       try {
-        const res = await fetch(`http://localhost:3000/api/products/detail/${id}`, { method: "POST" });
+        const res = await fetch(`${API_BASE_URL}/api/products/detail/${id}`, { method: "POST" });
         if (!res.ok) throw new Error();
         const product = await res.json();
 
@@ -530,6 +530,7 @@
 
     loadData();
   </script>
+  
 </body>
 
 </html>

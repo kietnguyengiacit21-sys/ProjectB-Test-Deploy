@@ -1025,7 +1025,7 @@
             </form>
         </div>
     </section>
-
+    <script src="/js/config.js"></script>
     <script>
         const slides = document.querySelectorAll(".hero-slide");
         const dotsWrap = document.getElementById("heroDots");
@@ -1163,7 +1163,7 @@
             const productGrid = document.getElementById('featured-products');
 
             try {
-                const response = await fetch('http://localhost:3000/api/products/public', {
+                const response = await fetch(`${API_BASE_URL}/api/products/public`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({})
@@ -1198,7 +1198,7 @@
                     if (product.image) {
                         imgUrl = product.image.startsWith('http') || product.image.startsWith('data:')
                             ? product.image
-                            : `http://localhost:3000/${product.image}`;
+                            : `${API_BASE_URL}/${product.image}`;
                     }
 
                     return `
@@ -1269,6 +1269,7 @@
     <script>
         renderFloatingIcons("floating-icons");
     </script>
+
 </body>
 
 </html>

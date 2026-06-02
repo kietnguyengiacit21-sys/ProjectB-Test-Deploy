@@ -269,7 +269,7 @@
     <script src="../components/header.js"></script>
     <script src="../components/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="/js/config.js"></script>
     <script>
        renderHeader("header");
     renderFooter("footer");
@@ -279,7 +279,7 @@
       if (imgStr.startsWith('http') || imgStr.startsWith('data:')) return imgStr;
       if (imgStr.startsWith('uploads/')) return `../../${imgStr}`;
       if (imgStr.startsWith('assets/')) return `../${imgStr}`;
-      return `http://localhost:3000/${imgStr}`;
+      return `${API_BASE_URL}/${imgStr}`;
     }
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -298,7 +298,7 @@
 
       // Fetch hóa đơn từ Backend
       try {
-          const res = await fetch(`http://localhost:3000/api/orders/detail/${orderCode}`, {
+          const res = await fetch(`${API_BASE_URL}/api/orders/detail/${orderCode}`, {
               headers: { 'Authorization': `Bearer ${token}` }
           });
           if (!res.ok) throw new Error();
@@ -348,7 +348,7 @@
       btn.disabled = true;
 
       try {
-        const res = await fetch('http://localhost:3000/api/orders/pay', {
+        const res = await fetch(`${API_BASE_URL}/api/orders/pay`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify({ order_code: orderCode })
@@ -370,6 +370,7 @@
       }
     }
     </script>
+    
 </body>
 
 </html>

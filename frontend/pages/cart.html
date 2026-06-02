@@ -246,7 +246,7 @@
   <script src="../components/header.js"></script>
   <script src="../components/footer.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <script src="/js/config.js"></script>
   <script>
     renderHeader("header");
     renderFooter("footer");
@@ -458,7 +458,7 @@
 
       try {
         // GỌI API TẠO ĐƠN HÀNG (TRỪ KHO LUÔN)
-        const response = await fetch('http://localhost:3000/api/orders/checkout', {
+        const response = await fetch(`${API_BASE_URL}/api/orders/checkout`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
           body: JSON.stringify({ cartItems: cartItems, totalAmount: totalAmount })
@@ -488,6 +488,7 @@
     }
     loadCart();
   </script>
+
 </body>
 
 </html>

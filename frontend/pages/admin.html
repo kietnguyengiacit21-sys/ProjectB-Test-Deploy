@@ -596,7 +596,7 @@
         </div>
     </div>
     <div id="toast-container" class="fixed bottom-5 right-5 z-[70] flex flex-col gap-2"></div>
-
+    <script src="/js/config.js"></script>
     <script>
         // ==========================================
         // 1. KIỂM TRA QUYỀN ADMIN & KHỞI TẠO
@@ -809,7 +809,7 @@
         async function loadProductsFromDB() {
             try {
                 showToast("Đang tải dữ liệu...", "success");
-                const response = await fetch('http://localhost:3000/api/products/admin-all', {
+                const response = await fetch(`${API_BASE_URL}//api/products/admin-all`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -911,7 +911,7 @@
             document.getElementById('form-image-file').value = "";
             const container = document.getElementById('image-preview-container');
             if (imgUrl) {
-                const fullUrl = imgUrl.startsWith('http') || imgUrl.startsWith('data:') ? imgUrl : `http://localhost:3000/${imgUrl}`;
+                const fullUrl = imgUrl.startsWith('http') || imgUrl.startsWith('data:') ? imgUrl : `${API_BASE_URL}//${imgUrl}`;
                 document.getElementById('form-image-base64').value = fullUrl;
                 container.innerHTML = `<img src="${fullUrl}" class="w-full h-full object-cover" />`;
             } else {
@@ -1029,7 +1029,7 @@
             showToast("Đang lưu vào Database...", "success");
 
             try {
-                const url = id ? `http://localhost:3000/api/products/${id}` : 'http://localhost:3000/api/products/add';
+                const url = id ? `${API_BASE_URL}/api/products/${id}` : `${API_BASE_URL}//api/products/add`;
                 const method = id ? 'PUT' : 'POST';
 
                 const response = await fetch(url, {
@@ -1073,7 +1073,7 @@
             showToast("Đang xử lý xóa...", "success");
 
             try {
-                const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+                const response = await fetch(`${API_BASE_URL}/api/products/${id}`, {
                     method: 'DELETE'
                 });
 
@@ -1117,7 +1117,7 @@
                     } else if (p.image.startsWith('image/')) {
                         imgUrl = `../assets/images/${p.image.replace('image/', '')}`;
                     } else {
-                        imgUrl = `http://localhost:3000/${p.image}`;
+                        imgUrl = `${API_BASE_URL}/${p.image}`;
                     }
                 }
 
@@ -1321,7 +1321,7 @@
             showToast("Đang đẩy file lên Server xử lý, chờ tí nhé...", "success");
 
             try {
-                const res = await fetch('http://localhost:3000' + endpoint, { method: 'POST', body: formData });
+                const res = await fetch(`${API_BASE_URL}` + endpoint, { method: 'POST', body: formData });
                 const data = await res.json();
 
                 if (res.ok) {
@@ -1355,7 +1355,7 @@
 
             try {
                 // GỌI API THẬT
-                const response = await fetch(`http://localhost:3000/api/customers/search?q=${encodeURIComponent(query)}`);
+                const response = await fetch(`${API_BASE_URL}/api/customers/search?q=${encodeURIComponent(query)}`);
                 const data = await response.json();
 
                 if (!response.ok) {
@@ -1401,6 +1401,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

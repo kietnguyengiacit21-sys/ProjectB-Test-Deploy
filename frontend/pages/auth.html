@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,8 @@
             align-items: center;
             justify-content: center;
             color: var(--text-main);
-            padding: 20px 0; /* Thêm padding để trên mobile scroll không bị lẹm */
+            padding: 20px 0;
+            /* Thêm padding để trên mobile scroll không bị lẹm */
         }
 
         .auth-container {
@@ -52,7 +54,7 @@
         .auth-card {
             background: #fff;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
 
@@ -238,8 +240,13 @@
             border-color: #d1d5db;
         }
 
-        .btn-social.google { color: #ea4335; }
-        .btn-social.facebook { color: #1877f2; }
+        .btn-social.google {
+            color: #ea4335;
+        }
+
+        .btn-social.facebook {
+            color: #1877f2;
+        }
 
         .back-home {
             display: block;
@@ -256,16 +263,29 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 480px) {
-            .auth-forms { padding: 24px; }
-            .social-logins { grid-template-columns: 1fr; }
+            .auth-forms {
+                padding: 24px;
+            }
+
+            .social-logins {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="auth-container">
@@ -285,19 +305,22 @@
                         <label>Số điện thoại</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-phone"></i>
-                            <input type="tel" id="loginPhone" class="form-control" placeholder="Nhập số điện thoại đã đăng ký" required>
+                            <input type="tel" id="loginPhone" class="form-control"
+                                placeholder="Nhập số điện thoại đã đăng ký" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Mật khẩu</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="loginPassword" class="form-control" placeholder="Nhập mật khẩu" required>
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Nhập mật khẩu"
+                                required>
                         </div>
                     </div>
 
                     <div class="form-options">
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin: 0; font-weight: normal;">
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin: 0; font-weight: normal;">
                             <input type="checkbox"> Nhớ mật khẩu
                         </label>
                         <a href="#" class="forgot-link">Quên mật khẩu?</a>
@@ -311,21 +334,24 @@
                         <label>Họ và Tên</label>
                         <div class="input-wrapper">
                             <i class="fa-regular fa-user"></i>
-                            <input type="text" class="form-control" id="regName" placeholder="Nhập họ tên đầy đủ" required>
+                            <input type="text" class="form-control" id="regName" placeholder="Nhập họ tên đầy đủ"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Số điện thoại (Dùng để đăng nhập)</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-phone"></i>
-                            <input type="tel" class="form-control" id="regPhone" placeholder="Nhập số điện thoại" required>
+                            <input type="tel" class="form-control" id="regPhone" placeholder="Nhập số điện thoại"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Số CCCD/CMND</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-id-card"></i>
-                            <input type="text" class="form-control" id="regCccd" placeholder="Nhập số CCCD/CMND để truy xuất" required>
+                            <input type="text" class="form-control" id="regCccd"
+                                placeholder="Nhập số CCCD/CMND để truy xuất" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -339,21 +365,24 @@
                         <label>Địa chỉ giao hàng</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-location-dot"></i>
-                            <input type="text" class="form-control" id="regAddress" placeholder="Nhập địa chỉ của bạn" required>
+                            <input type="text" class="form-control" id="regAddress" placeholder="Nhập địa chỉ của bạn"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Mật khẩu</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="regPass" class="form-control" placeholder="Tạo mật khẩu (ít nhất 6 ký tự)" minlength="6" required>
+                            <input type="password" id="regPass" class="form-control"
+                                placeholder="Tạo mật khẩu (ít nhất 6 ký tự)" minlength="6" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Xác nhận mật khẩu</label>
                         <div class="input-wrapper">
                             <i class="fa-solid fa-shield-check"></i>
-                            <input type="password" id="regPassConfirm" class="form-control" placeholder="Nhập lại mật khẩu" required>
+                            <input type="password" id="regPassConfirm" class="form-control"
+                                placeholder="Nhập lại mật khẩu" required>
                         </div>
                     </div>
 
@@ -376,7 +405,7 @@
 
         <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Quay lại Trang chủ</a>
     </div>
-
+    <script src="/js/config.js"></script>
     <script>
         // ==========================================
         // CỖ MÁY TẠO THÔNG BÁO XỊN SÒ (TOAST)
@@ -391,7 +420,7 @@
             }
 
             const toast = document.createElement('div');
-            const bgColor = type === 'error' ? '#ef4444' : '#10b981'; 
+            const bgColor = type === 'error' ? '#ef4444' : '#10b981';
             const icon = type === 'error' ? '<i class="fa-solid fa-circle-exclamation"></i>' : '<i class="fa-solid fa-circle-check"></i>';
 
             toast.style.cssText = `
@@ -425,7 +454,7 @@
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             if (tabName === 'login') {
                 document.querySelectorAll('.tab-btn')[0].classList.add('active');
             } else if (tabName === 'register') {
@@ -442,13 +471,13 @@
         // KẾT NỐI API ĐĂNG NHẬP (Lấy SĐT gửi đi)
         // ==========================================
         async function handleLogin(e) {
-            e.preventDefault(); 
-            
+            e.preventDefault();
+
             const phone = document.getElementById('loginPhone').value; // Bắt SĐT thay vì Email
             const password = document.getElementById('loginPassword').value;
 
             try {
-                const res = await fetch('http://localhost:3000/api/auth/login', {
+                const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ phone, password }) // Đẩy phone lên server
@@ -458,23 +487,23 @@
 
                 if (res.ok) {
                     showToast('Đăng nhập thành công! Chào mừng ' + data.user.name, 'success');
-                    
+
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user', JSON.stringify(data.user));
 
                     setTimeout(() => {
                         if (data.user.role === 'admin') {
-                            window.location.href = 'admin.html'; 
+                            window.location.href = 'admin.html';
                         } else {
-                            window.location.href = 'account.html'; 
+                            window.location.href = 'account.html';
                         }
                     }, 1000);
                 } else {
-                    showToast('Lỗi: ' + data.message, 'error'); 
+                    showToast('Lỗi: ' + data.message, 'error');
                 }
             } catch (error) {
                 console.error("Lỗi:", error);
-                showToast('Lỗi kết nối đến máy chủ Backend!', 'error'); 
+                showToast('Lỗi kết nối đến máy chủ Backend!', 'error');
             }
         }
 
@@ -492,20 +521,20 @@
             const pass = document.getElementById('regPass').value;
             const confirmPass = document.getElementById('regPassConfirm').value;
 
-            if(pass !== confirmPass) {
-                showToast('Mật khẩu xác nhận không khớp. Vui lòng kiểm tra lại!', 'error'); 
+            if (pass !== confirmPass) {
+                showToast('Mật khẩu xác nhận không khớp. Vui lòng kiểm tra lại!', 'error');
                 return;
             }
 
             try {
-                const res = await fetch('http://localhost:3000/api/auth/register', {
+                const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        full_name: name, 
-                        phone: phone, 
+                    body: JSON.stringify({
+                        full_name: name,
+                        phone: phone,
                         cccd: cccd,      // Ném CCCD đi
-                        email: email, 
+                        email: email,
                         address: address,
                         password: pass
                     })
@@ -514,17 +543,19 @@
                 const data = await res.json();
 
                 if (res.ok) {
-                    showToast(data.message, 'success'); 
+                    showToast(data.message, 'success');
                     switchTab('login');
                     document.getElementById('registerForm').reset();
                 } else {
-                    showToast('Lỗi: ' + data.message, 'error'); 
+                    showToast('Lỗi: ' + data.message, 'error');
                 }
             } catch (error) {
                 console.error("Lỗi:", error);
-                showToast('Lỗi kết nối đến máy chủ Backend!', 'error'); 
+                showToast('Lỗi kết nối đến máy chủ Backend!', 'error');
             }
         }
     </script>
+
 </body>
+
 </html>

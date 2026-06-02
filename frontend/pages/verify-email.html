@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-
+    <script src="/js/config.js"></script>   
     <script>
         lucide.createIcons();
 
@@ -167,7 +167,7 @@
             startFakeProgress();
 
             try {
-                const response = await fetch('http://localhost:3000/api/auth/verify-email', {
+                const response = await fetch(`${API_BASE_URL}/api/auth/verify-email`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ token: token })
@@ -195,7 +195,7 @@
             lucide.createIcons();
 
             try {
-                const response = await fetch('http://localhost:3000/api/auth/resend-email', {
+                const response = await fetch(`${API_BASE_URL}/api/auth/resend-email`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: registeredEmail })
@@ -268,5 +268,6 @@
 
         setTimeout(() => { verifyEmail(); }, 500); 
     </script>
+    
 </body>
 </html>

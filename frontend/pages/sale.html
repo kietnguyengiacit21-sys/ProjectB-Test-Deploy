@@ -627,7 +627,7 @@
 
     <script src="../components/header.js"></script>
     <script src="../components/footer.js"></script>
-
+    <script src="/js/config.js"></script>
     <script>
         renderHeader("header");
         renderFooter("footer");
@@ -646,7 +646,7 @@
             if (!container) return;
 
             try {
-                const res = await fetch('http://localhost:3000/api/products/promo', {
+                const res = await fetch(`${API_BASE_URL}/api/products/promo`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -667,7 +667,7 @@
                     if (product.image) {
                         imgUrl = product.image.startsWith('http') || product.image.startsWith('data:')
                             ? product.image
-                            : `http://localhost:3000/${product.image}`;
+                            : `${API_BASE_URL}/${product.image}`;
                     }
 
                     return `
@@ -711,6 +711,7 @@
             alert("Đã thêm sản phẩm ID " + id + " vào giỏ hàng!");
         }
     </script>
+    
 </body>
 
 </html>

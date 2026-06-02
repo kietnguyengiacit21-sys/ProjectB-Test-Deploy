@@ -23,55 +23,276 @@
             --border: #e5e7eb;
         }
 
-        body { font-family: "Inter", sans-serif; background-color: var(--bg-page); color: var(--text-main); margin: 0; }
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+        }
 
-        .breadcrumb { max-width: 1200px; margin: 20px auto 10px; padding: 0 20px; font-size: 14px; color: var(--text-muted); }
-        .breadcrumb a { color: var(--text-main); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--primary); }
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto 10px;
+            padding: 0 20px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
 
-        .account-container { max-width: 1200px; margin: 0 auto 60px; padding: 0 20px; display: grid; grid-template-columns: 260px 1fr; gap: 30px; }
+        .breadcrumb a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
 
-        .acc-sidebar { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); padding: 24px 0; height: fit-content; }
-        .acc-user-info { text-align: center; padding: 0 20px 20px; border-bottom: 1px solid var(--border); margin-bottom: 10px; }
-        .acc-avatar { width: 80px; height: 80px; background: #ffe4e6; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 12px; }
-        .acc-name { font-size: 18px; font-weight: 700; margin: 0 0 4px; }
-        .acc-email { font-size: 13px; color: var(--text-muted); margin: 0; }
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
 
-        .acc-menu { list-style: none; padding: 0; margin: 0; }
-        .acc-menu li { padding: 12px 24px; cursor: pointer; font-weight: 500; color: #4b5563; display: flex; align-items: center; gap: 12px; transition: 0.2s; border-left: 4px solid transparent; }
-        .acc-menu li:hover { background: #f8fafc; color: var(--primary); }
-        .acc-menu li.active { background: #fff1f2; color: var(--primary); border-left-color: var(--primary); font-weight: 700; }
-        .acc-menu li i { width: 20px; text-align: center; }
+        .account-container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 30px;
+        }
 
-        .acc-content { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); padding: 32px; min-height: 500px; }
-        .tab-pane { display: none; animation: fadeIn 0.4s ease; }
-        .tab-pane.active { display: block; }
-        .tab-title { font-size: 24px; font-weight: 700; margin: 0 0 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .acc-sidebar {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 24px 0;
+            height: fit-content;
+        }
+
+        .acc-user-info {
+            text-align: center;
+            padding: 0 20px 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 10px;
+        }
+
+        .acc-avatar {
+            width: 80px;
+            height: 80px;
+            background: #ffe4e6;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 12px;
+        }
+
+        .acc-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 4px;
+        }
+
+        .acc-email {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .acc-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .acc-menu li {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.2s;
+            border-left: 4px solid transparent;
+        }
+
+        .acc-menu li:hover {
+            background: #f8fafc;
+            color: var(--primary);
+        }
+
+        .acc-menu li.active {
+            background: #fff1f2;
+            color: var(--primary);
+            border-left-color: var(--primary);
+            font-weight: 700;
+        }
+
+        .acc-menu li i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .acc-content {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 32px;
+            min-height: 500px;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
 
         /* THANH ĐIỀU HƯỚNG ĐƠN HÀNG (SHOPEE STYLE) */
-        .order-tabs { display: flex; background: #f8fafc; border-radius: 8px; margin-bottom: 25px; overflow: hidden; border: 1px solid #e5e7eb; }
-        .order-tab { flex: 1; text-align: center; padding: 14px 0; font-weight: 600; color: #64748b; cursor: pointer; transition: 0.2s; border-bottom: 3px solid transparent; }
-        .order-tab:hover { color: #dc2626; background: #fff; }
-        .order-tab.active { color: #dc2626; background: #fff; border-bottom-color: #dc2626; }
+        .order-tabs {
+            display: flex;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        .order-tab {
+            flex: 1;
+            text-align: center;
+            padding: 14px 0;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            transition: 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .order-tab:hover {
+            color: #dc2626;
+            background: #fff;
+        }
+
+        .order-tab.active {
+            color: #dc2626;
+            background: #fff;
+            border-bottom-color: #dc2626;
+        }
 
         /* PROFILE FORM */
-        .profile-form { max-width: 600px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
-        .form-control { width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 6px; font-family: inherit; font-size: 15px; transition: 0.2s; box-sizing: border-box; }
-        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1); }
-        .form-control:disabled { background-color: #f3f4f6; color: var(--text-muted); cursor: not-allowed; }
+        .profile-form {
+            max-width: 600px;
+        }
 
-        .btn { padding: 12px 24px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 15px; transition: 0.2s; }
-        .btn-primary { background: var(--primary); color: #fff; }
-        .btn-primary:hover { background: var(--primary-hover); }
-        .btn-outline { background: #fff; border: 1px solid #d1d5db; color: var(--text-main); }
-        .btn-outline:hover { background: #f3f4f6; }
-        .action-buttons { display: flex; gap: 12px; margin-top: 30px; }
-        #saveProfileBtn, #cancelEditBtn { display: none; }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .account-container { grid-template-columns: 1fr; } .order-tabs { flex-wrap: wrap; } .order-tab { min-width: 50%; border-bottom: 1px solid #e5e7eb; } }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 15px;
+            transition: 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+        }
+
+        .form-control:disabled {
+            background-color: #f3f4f6;
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background: #fff;
+            border: 1px solid #d1d5db;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: #f3f4f6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        #saveProfileBtn,
+        #cancelEditBtn {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .account-container {
+                grid-template-columns: 1fr;
+            }
+
+            .order-tabs {
+                flex-wrap: wrap;
+            }
+
+            .order-tab {
+                min-width: 50%;
+                border-bottom: 1px solid #e5e7eb;
+            }
+        }
     </style>
 </head>
 
@@ -90,10 +311,12 @@
                 <p class="acc-email">Đang tải...</p>
             </div>
             <ul class="acc-menu">
-                <li class="active" onclick="switchTab('dashboard', this)"><i class="fa-solid fa-house"></i> Tổng quan</li>
+                <li class="active" onclick="switchTab('dashboard', this)"><i class="fa-solid fa-house"></i> Tổng quan
+                </li>
                 <li onclick="switchTab('orders', this)"><i class="fa-solid fa-box-open"></i> Lịch sử đơn hàng</li>
                 <li onclick="switchTab('profile', this)"><i class="fa-solid fa-id-badge"></i> Thông tin cá nhân</li>
-                <li style="color: #dc2626; margin-top: 20px; border-top: 1px solid #eee;" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
+                <li style="color: #dc2626; margin-top: 20px; border-top: 1px solid #eee;" onclick="logout()"><i
+                        class="fa-solid fa-right-from-bracket"></i> Đăng xuất</li>
             </ul>
         </aside>
 
@@ -110,17 +333,26 @@
 
             <div id="profile" class="tab-pane">
                 <h2 class="tab-title">Hồ sơ của tôi</h2>
-                <p style="color: var(--text-muted); margin-bottom: 24px;">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Quản lý thông tin hồ sơ để bảo mật tài khoản
+                </p>
                 <div class="profile-form">
-                    <div class="form-group"><label>Họ và Tên</label><input type="text" id="inpName" class="form-control" disabled></div>
-                    <div class="form-group"><label>Số điện thoại</label><input type="tel" id="inpPhone" class="form-control" disabled></div>
-                    <div class="form-group"><label>Số CCCD/CMND</label><input type="text" id="inpCccd" class="form-control" disabled></div>
-                    <div class="form-group"><label>Email</label><input type="email" id="inpEmail" class="form-control" disabled><small style="color: #ef4444; margin-top: 4px; display: block;">* Email dùng để nhận thông báo nên không thể thay đổi.</small></div>
-                    <div class="form-group"><label>Địa chỉ giao hàng</label><textarea id="inpAddress" class="form-control" rows="3" disabled></textarea></div>
+                    <div class="form-group"><label>Họ và Tên</label><input type="text" id="inpName" class="form-control"
+                            disabled></div>
+                    <div class="form-group"><label>Số điện thoại</label><input type="tel" id="inpPhone"
+                            class="form-control" disabled></div>
+                    <div class="form-group"><label>Số CCCD/CMND</label><input type="text" id="inpCccd"
+                            class="form-control" disabled></div>
+                    <div class="form-group"><label>Email</label><input type="email" id="inpEmail" class="form-control"
+                            disabled><small style="color: #ef4444; margin-top: 4px; display: block;">* Email dùng để
+                            nhận thông báo nên không thể thay đổi.</small></div>
+                    <div class="form-group"><label>Địa chỉ giao hàng</label><textarea id="inpAddress"
+                            class="form-control" rows="3" disabled></textarea></div>
                     <div class="action-buttons">
-                        <button id="editProfileBtn" class="btn btn-outline" onclick="enableEdit()">Cập nhật thông tin</button>
+                        <button id="editProfileBtn" class="btn btn-outline" onclick="enableEdit()">Cập nhật thông
+                            tin</button>
                         <button id="cancelEditBtn" class="btn btn-outline" onclick="cancelEdit()">Hủy</button>
-                        <button id="saveProfileBtn" class="btn btn-primary" onclick="saveProfile()">Lưu thay đổi</button>
+                        <button id="saveProfileBtn" class="btn btn-primary" onclick="saveProfile()">Lưu thay
+                            đổi</button>
                     </div>
                 </div>
             </div>
@@ -132,7 +364,7 @@
     <script src="../components/header.js"></script>
     <script src="../components/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="/js/config.js"></script>
     <script>
         renderHeader("header");
         renderFooter("footer");
@@ -157,8 +389,8 @@
 
             document.getElementById('inpName').value = user.name || "";
             document.getElementById('inpEmail').value = user.email || "";
-            document.getElementById('inpPhone').value = user.phone || ""; 
-            document.getElementById('inpCccd').value = user.cccd || ""; 
+            document.getElementById('inpPhone').value = user.phone || "";
+            document.getElementById('inpCccd').value = user.cccd || "";
             document.getElementById('inpAddress').value = user.address || "";
 
             loadOrderHistory(token, user.name);
@@ -168,7 +400,7 @@
         async function loadOrderHistory(token, userName) {
             const dashboardContainer = document.querySelector('#dashboard');
             try {
-                const response = await fetch('http://localhost:3000/api/orders/history', {
+                const response = await fetch(`${API_BASE_URL}/api/orders/history`, {
                     method: 'GET', headers: { 'Authorization': 'Bearer ' + token }
                 });
 
@@ -237,7 +469,7 @@
 
                     let itemsHtml = '';
                     order.items.forEach(item => {
-                        const itemImage = item.product_image && item.product_image.startsWith('http') ? item.product_image : 'http://localhost:3000/' + item.product_image;
+                        const itemImage = item.product_image && item.product_image.startsWith('http') ? item.product_image : `${API_BASE_URL}/` + item.product_image;
                         itemsHtml += `
                             <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px; border-bottom: 1px dashed #eee; padding-bottom: 10px;">
                                 <img src="${itemImage}" onerror="this.src='https://placehold.co/100x100/1f2937/fff?text=No+Image'" style="width: 60px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;">
@@ -253,11 +485,11 @@
                     // Cấu hình màu sắc trạng thái
                     const isPending = order.status === 'Đang xử lý' || order.status === 'Chờ thanh toán';
                     const isCancelled = order.status === 'Đã hủy';
-                    
-                    let statusBg = '#dbeafe'; let statusColor = '#1e40af'; 
-                    if (isPending) { statusBg = '#fef3c7'; statusColor = '#d97706'; } 
-                    if (order.status === 'Đã thanh toán') { statusBg = '#d1fae5'; statusColor = '#059669'; } 
-                    if (isCancelled) { statusBg = '#fee2e2'; statusColor = '#dc2626'; } 
+
+                    let statusBg = '#dbeafe'; let statusColor = '#1e40af';
+                    if (isPending) { statusBg = '#fef3c7'; statusColor = '#d97706'; }
+                    if (order.status === 'Đã thanh toán') { statusBg = '#d1fae5'; statusColor = '#059669'; }
+                    if (isCancelled) { statusBg = '#fee2e2'; statusColor = '#dc2626'; }
 
                     // TẤT CẢ MÃ ĐƠN ĐỀU CÓ THỂ CLICK VÀO ĐỂ XEM HÓA ĐƠN CHI TIẾT
                     const orderCodeDisplay = `
@@ -302,14 +534,14 @@
         async function cancelMyOrder(orderCode) {
             const token = localStorage.getItem('token');
             Swal.fire({
-                title: 'Hủy đơn hàng?', 
+                title: 'Hủy đơn hàng?',
                 text: "Hàng sẽ được trả lại kho, bạn có chắc chắn muốn hủy đơn này không?",
                 icon: 'warning', showCancelButton: true, confirmButtonColor: '#dc2626',
                 cancelButtonColor: '#9ca3af', confirmButtonText: 'Đồng ý Hủy', cancelButtonText: 'Không, giữ lại'
             }).then(async (result) => {
                 if (result.isConfirmed) {
                     try {
-                        const res = await fetch('http://localhost:3000/api/orders/cancel', {
+                        const res = await fetch(`${API_BASE_URL}/api/orders/cancel`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                             body: JSON.stringify({ order_code: orderCode })
@@ -318,12 +550,12 @@
                             Swal.fire('Đã hủy!', 'Đơn hàng đã được hủy thành công.', 'success');
                             const user = JSON.parse(localStorage.getItem('user'));
                             // Refresh lại data từ server để đồng bộ
-                            await loadOrderHistory(token, user.name); 
+                            await loadOrderHistory(token, user.name);
                         } else {
                             const data = await res.json();
                             Swal.fire('Lỗi', data.message || 'Không thể hủy đơn!', 'error');
                         }
-                    } catch(e) { Swal.fire('Lỗi', 'Mất kết nối tới máy chủ!', 'error'); }
+                    } catch (e) { Swal.fire('Lỗi', 'Mất kết nối tới máy chủ!', 'error'); }
                 }
             });
         }
@@ -354,7 +586,7 @@
             if (!token) return window.location.href = 'auth.html';
 
             try {
-                const res = await fetch('http://localhost:3000/api/auth/update-profile', {
+                const res = await fetch(`${API_BASE_URL}/api/auth/update-profile`, {
                     method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
                     body: JSON.stringify({ full_name: newName, phone: newPhone, cccd: newCccd, address: newAddress })
                 });
@@ -381,5 +613,7 @@
             setTimeout(() => { toast.style.transform = 'translateX(120%)'; setTimeout(() => toast.remove(), 400); }, 3000);
         }
     </script>
+
 </body>
+
 </html>
