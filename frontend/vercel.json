@@ -5,8 +5,8 @@
       "destination": "/pages/index.html"
     },
     {
-      "source": "/(.*\\.html)",
-      "destination": "/pages/$1"
+      "source": "/:file.html",
+      "destination": "/pages/:file.html"
     }
   ]
 }
