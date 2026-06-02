@@ -25,7 +25,7 @@ function renderHeader(elementId) {
 
     if (displayName) {
         // ĐÃ ĐĂNG NHẬP: Bấm vào thì nhảy sang trang Quản trị (Admin) hoặc Hồ sơ (Customer)
-        const profileLink = user.role === 'admin' ? 'admin.html' : 'account.html';
+        const profileLink = user.role === 'admin' ? 'admin.html' : 'my-account.html';
 
         userHtml = `
             <a href="${profileLink}" style="display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none; margin: 0 15px;">
