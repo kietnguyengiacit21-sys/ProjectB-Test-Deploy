@@ -809,7 +809,7 @@
         async function loadProductsFromDB() {
             try {
                 showToast("Đang tải dữ liệu...", "success");
-                const response = await fetch(`${API_BASE_URL}//api/products/admin-all`, {
+                const response = await fetch(`${API_BASE_URL}/api/products/admin-all`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -911,7 +911,7 @@
             document.getElementById('form-image-file').value = "";
             const container = document.getElementById('image-preview-container');
             if (imgUrl) {
-                const fullUrl = imgUrl.startsWith('http') || imgUrl.startsWith('data:') ? imgUrl : `${API_BASE_URL}//${imgUrl}`;
+                const fullUrl = imgUrl.startsWith('http') || imgUrl.startsWith('data:') ? imgUrl : `${API_BASE_URL}/${imgUrl}`;
                 document.getElementById('form-image-base64').value = fullUrl;
                 container.innerHTML = `<img src="${fullUrl}" class="w-full h-full object-cover" />`;
             } else {
@@ -1029,7 +1029,7 @@
             showToast("Đang lưu vào Database...", "success");
 
             try {
-                const url = id ? `${API_BASE_URL}/api/products/${id}` : `${API_BASE_URL}//api/products/add`;
+                const url = id ? `${API_BASE_URL}/api/products/${id}` : `${API_BASE_URL}/api/products/add`;
                 const method = id ? 'PUT' : 'POST';
 
                 const response = await fetch(url, {
