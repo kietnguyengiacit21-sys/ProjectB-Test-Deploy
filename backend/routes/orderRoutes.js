@@ -3,7 +3,7 @@ const router = express.Router();
 const orderController = require('../controllers/orderController');
 
 // ĐÃ BẬT LẠI MIDDLEWARE ĐỂ KIỂM TRA ĐĂNG NHẬP
-const authMiddleware = require('../middleware/authMiddleware'); 
+const authMiddleware = require('../middleware/authmiddleware'); 
 
 // Khai báo 5 API cho luồng hóa đơn
 router.post('/checkout', authMiddleware, orderController.checkout);
